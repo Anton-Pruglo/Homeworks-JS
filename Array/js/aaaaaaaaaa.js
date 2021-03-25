@@ -1,1 +1,0 @@
-String.fromCharCode(a, e, i, o, u);
