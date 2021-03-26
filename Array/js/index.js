@@ -63,36 +63,4 @@ MyArray.prototype.reduce = function (callback, currentValue) {
 MyArray.prototype.flat = function () {
 	return this.reduce((accumulator, this[i]) => accumulator.concat(this[i]), []);
 };
-const arr = new MyArray();
-arr.push([1,2,3]);
-arr.push([4,5,6]);
-arr.push([1,2,3]);
-const newArr = new Array();
-newArr.push([1,2,3],[4,5,6],[7,[8,9]]);
 
-
-const b = newArr.flat(2);
-
-console.log(b);
-
-
-
-function smallEnough(a, limit){
-	let b = 0;
-	for(let i = 0; i < a.length; ++i) {
-		if(a[i] <= limit){
-			b++;
-		}
-	}
-	return b == a.length;
-	}
-}
-
-function isVow(a){
-	let b = [];
-	for(let i = 0; i < a.length; ++i) {
-		if(typeof(a[i]) === 'string'){
-			b += a[i];
-		}return b;
-	}
-}
