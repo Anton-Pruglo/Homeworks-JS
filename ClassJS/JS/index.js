@@ -109,7 +109,6 @@ function  isUnderage(user) {
 const anderageUsersAvgAge = arrayClass
 	.filter(isUnderage)
 	.reduce((previusValue, item) => previusValue + item.age, 0) / arrayClass.length;
-
 	console.log(Math.round(anderageUsersAvgAge));
 
 /**
@@ -154,7 +153,6 @@ const a = getUserIsGmail(arrayClass);
 console.log(a);
 const b = getAverageSalaryDepartment(arrayClass);
 console.log(b);
-
 
 
 
