@@ -1,9 +1,27 @@
+class LinkedListIterator {
+    #list = null;
+    #current = null;
+
+    constructor(list) {
+        this.#list = list;
+        this.#current = this.#list.head;
+    }
+
+    next() {
+        const result = {
+            value: this.#current?.value,
+            done: !this.#current,
+        }
+        this.#current = this.#current?.next;
+        return result;
+    }
+}
+
 class DoublyLinkedListNode {
     constructor(value) {
         this.value = value;
         this.prev = null;
         this.next = null;
-
     }
 }
 
@@ -98,20 +116,8 @@ class DoublyLinkedList {
         return this;
     }
 
- [Symbol.iterator]() {
-        let current = this.head;
-        return new Object ({
-           next: () =>  {
-               const isDone = !Boolean(current);
-               const value = isDone ? undefined : current.value;
-               current = isDone ? null : current.next;
-               return {
-                   value,
-                   done: isDone,
-               }
-           }
-      })
- }
+ [Symbol.iterator] = () => new LinkedListIterator(this);
+
 
 }
  const a = new DoublyLinkedList;
