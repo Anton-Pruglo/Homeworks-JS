@@ -1,0 +1,38 @@
+.carusel-container {
+    max-width: 600px;
+    height: 400px;
+    margin: auto;
+    border: 5px solid aqua;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.carusel-container img {
+    display: block;
+    width: 100%;
+}
+.carusel-slide {
+    display: flex;
+    height: 450px;
+}
+.left,.right{
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    background-color: ;
+    position: relative;
+    outline: none;
+}
+.left{
+    top: -270px;
+    z-index: 3;
+}
+.right{
+    top: -270px;
+    right: -495px;
+    z-index: 3;
+}
+.animation {
+    transition: .4s all ease-in-out;
+}
+
