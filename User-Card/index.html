@@ -5,21 +5,34 @@
 		<title>User-Card</title>
 		<link rel="stylesheet" href="styles/reset.css">
 		<link rel="stylesheet" href="styles/main.css">
-		<script src="js/index.js"></script>
+		<script defer src="js/index.js"></script>
 	</head>
 	<body>
-		<section name="isers">
-			<div class="card">
+		<section class="users">
+			<!-- <div class="card">
 				<div class="image-wrapper">
 					<h3 class="image-placeholder">JD</h3>
 				</div>
 				<h1 class="name">Mirco Cropovich</h1>
-				<p class="title">Front-End Developer</p>
+				<p class="title">Front-end Web Developer</p>
 				<p>Harvard University</p>
 				<p>
 					<button>Contact</button>
 				</p>
-			</div>
+			</div> -->
+			<template id="clone-card">
+				<div class="card">
+					<div class="image-wrapper">
+						<h3 class="image-placeholder">JD</h3>
+					</div>
+					<h1 class="name"></h1>
+					<p class="title">Front-end Web Developer</p>
+					<p>Harvard University</p>
+					<p>
+						<button>Contact</button>
+					</p>
+				</div>
+			</template>
 		</section>
 	</body>
 </html>
