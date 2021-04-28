@@ -32,29 +32,25 @@ const template = document.querySelector('#clone-card');
 const h1 = template.content.querySelector('h1');
 const placeholder = template.content.querySelector('.image-placeholder');
 const imageWrapper = template.content.querySelector('.image-wrapper');
-
-
+const img = imageWrapper.querySelector('img');
 
 for(const key of user) {
-	if (key.image) {	
+	
+	if (key.image !== null) {	
+		img.src = key.image;
+		imageWrapper.innerHTML = '';
+		imageWrapper.appendChild(img);
 		
-		const userCardImage = new Image();
-				
-		userCardImage.addEventListener('load', ({currentTarget}) => {
-			currentTarget.classList.add('image');
-			imageWrapper.innerHTML = '';
-			imageWrapper.appendChild(currentTarget);
-		});
-		userCardImage.src = key.image;
-	}
+	} else {
+		imageWrapper.innerHTML = '';
+		imageWrapper.appendChild(placeholder);
+	};
 	h1.textContent = `${key.firstName} ${key.lastName}`;
 	placeholder.textContent = `${key.firstName} ${key.lastName}`.split(" ").map((n)=>n[0]).join("");
 	placeholder.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
 	const copyCard = template.content.cloneNode(true);
 	userContainer.append(copyCard);
 }
-	
-
 
 
 
