@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
 	const images = document.querySelectorAll('.carusel-slide img');
 	let counter = 0;
 	const stepSize = images[0].clientWidth;
-	slider.style.transform = 'translateX(' + `${-stepSize * counter}px)`;
+	
 	right.addEventListener('click', () => {
 		(counter >= images.length -1) ? counter = -1 : null;
 		slider.classList.add('animation');
